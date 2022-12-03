@@ -18,10 +18,10 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Rami Suwayyed',
-            'email' => 'Rami@suwayyed-blog.com',
+            'name' => 'Mohammed Safadi',
+            'email' => 'm@safadi.ps',
             'password' => Hash::make('password'),
-            'phone_number' => '962781860702',
+            'phone_number' => '970591234567',
         ]);
     }
 }

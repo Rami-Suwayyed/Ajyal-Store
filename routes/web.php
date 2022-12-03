@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\SocialLoginController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Front\Auth\TwoFactorAuthentcationController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
@@ -34,10 +34,11 @@ Route::group([
     Route::get('/', [HomeController::class, 'index'])
         ->name('home');
 
+
     Route::get('/products', [ProductsController::class, 'index'])
         ->name('products.index');
 
-    Route::get('/products/{product:slug}', [ProductsController::class, 'show'])
+    Route::get('/products/show/{product:slug}', [ProductsController::class, 'show'])
         ->name('products.show');
 
     Route::resource('cart', CartController::class);
