@@ -21,6 +21,7 @@ class PaymentsController extends Controller
     public function createStripePaymentIntent(Order $order)
     {
 
+        dd($order);
         $amount = $order->items->sum(function($item) {
             return $item->price * $item->quantity;
         });
@@ -59,7 +60,7 @@ class PaymentsController extends Controller
 
     public function confirm(Request $request, Order $order)
     {
-        
+
         /**
          * @var \Stripe\StripeClient
          */
@@ -69,7 +70,7 @@ class PaymentsController extends Controller
             []
         );
 
-        
+
         if ($paymentIntent->status == 'succeeded') {
             try {
                 // Update payment
@@ -95,6 +96,6 @@ class PaymentsController extends Controller
             'order' => $order->id,
             'status' => $paymentIntent->status,
         ]);
-        
+
     }
 }

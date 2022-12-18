@@ -30,7 +30,7 @@ return [
         'ability' => 'orders.view',
     ],
     [
-        'icon' => 'fas fa-shield nav-icon',
+        'icon' => 'fas fa-user-tag nav-icon',
         'route' => 'dashboard.roles.index',
         'title' => 'Roles',
         'active' => 'dashboard.roles.*',
