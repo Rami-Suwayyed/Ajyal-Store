@@ -17,7 +17,6 @@ class SocialLoginController extends Controller
     public function redirect($provider)
     {
         return Socialite::driver($provider)
-            //->scopes(['https://www.googleapis.com/auth/drive.file'])
             ->redirect();
     }
 
