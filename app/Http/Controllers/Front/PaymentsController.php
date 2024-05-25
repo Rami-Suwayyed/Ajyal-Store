@@ -30,7 +30,7 @@ class PaymentsController extends Controller
          */
         $stripe = App::make('stripe.client');
         $paymentIntent = $stripe->paymentIntents->create([
-            'amount' => $amount,
+            'amount' =>(int) $amount,
             'currency' => 'usd',
             'payment_method_types' => ['card'],
         ]);

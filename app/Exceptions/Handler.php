@@ -48,7 +48,7 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (QueryException $e) {
-           
+
             if ($e->getCode() === '23000') {
                 Log::channel('sql')->warning($e->getMessage());
                 return false;

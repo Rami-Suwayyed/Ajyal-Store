@@ -247,7 +247,8 @@
                                             <div class="col-md-12">
                                                 <div class="steps-form-btn button">
                                                     <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">previous</button>
-                                                    <a href="javascript:void(0)" class="btn btn-alt">Save & Continue</a>
+                                                    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">Save & Continue</button>
+{{--                                                    <a href="javascript:void(0)" class="btn btn-alt">Save & Continue</a>--}}
                                                 </div>
                                             </div>
                                         </div>

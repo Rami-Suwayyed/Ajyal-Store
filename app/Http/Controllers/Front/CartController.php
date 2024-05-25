@@ -44,15 +44,15 @@ class CartController extends Controller
         ]);
 
         $product = Product::findOrFail($request->post('product_id'));
-        $this->cart->add($product, $request->post('quantity'));
+        $this->cart->add($product, $request->post('quantity') ?? 1);
 
         if ($request->expectsJson()) {
-            
+
             return response()->json([
                 'message' => 'Item added to cart!',
             ], 201);
         }
-        
+
         return redirect()->route('cart.index')
             ->with('success', 'Product added to cart!');
     }
@@ -82,7 +82,7 @@ class CartController extends Controller
     public function destroy($id)
     {
         $this->cart->delete($id);
-        
+
         return [
             'message' => 'Item deleted!',
         ];

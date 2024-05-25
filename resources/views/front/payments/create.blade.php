@@ -7,10 +7,12 @@
 
                     <form action="" method="post" id="payment-form">
                         <div id="payment-element"></div>
-                        <button type="submit" id="submit" class="btn">
-                            <span id="button-text">Pay now</span>
-                            <span id="spinner" style="display: none;">Processing...</span>
-                        </button>
+                        <div class="button">
+                            <button type="submit" id="submit" class="btn">
+                                <span id="button-text">Pay now</span>
+                                <span id="spinner" style="display: none;">Processing...</span>
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -20,7 +22,7 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script>
         // This is your test publishable API key.
-        const stripe = Stripe("{{ config('services.stripe.restricted_keys') }}");
+        const stripe = Stripe("{{ config('services.stripe.publishable_key') }}");
 
         let elements;
 
